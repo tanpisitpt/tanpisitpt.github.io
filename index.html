@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Homepage - Tanpisit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BDM36LLPR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9BDM36LLPR');
+  </script>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Nunito', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div
+    class="center-container"
+  >
+    <h1
+      class="main-header"
+    >...Coming Soon...</h1>
+    <div id="countdown" class="countdown-text">
+      .
+    </div>
+  </div>
+  <script>
+    function zeroLead(n) {
+      if (n < 10) {
+        return `0${n}`;
+      }
+      return n;
+    }
+    const releaseTime = new Date(2023, 7, 1, 11, 0, 0);
+    const countdownInterval = setInterval(() => {
+      const now = new Date();
+      const diff = releaseTime.getTime() - now.getTime();
+      const hours = Math.floor(diff / 1000 / 3600);
+      const minutes = Math.floor(((diff / 1000) % 3600) / 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      document.getElementById('countdown').innerText = diff > 0 
+        ? `${hours} : ${zeroLead(minutes)} : ${zeroLead(seconds)}`
+        : 'Our time has come!';ment.getElementById('countdown').innerText('Our time has come!');
+    }, 1000);
+  </script>
+</body>
+</html>
